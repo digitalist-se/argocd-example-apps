@@ -3,6 +3,10 @@ kind: Deployment
 metadata:
   name: guestbook-ui
 spec:
+  securityContext:
+    runAsUser: 1000
+    runAsGroup: 3000
+    fsGroup: 2000
   replicas: 1
   revisionHistoryLimit: 3
   selector:
